@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel del Estudiante</title>
+</head>
+<body>
+    <h1>Bienvenido, {{ Luna }} 🎒</h1>
+    <p>Aquí puedes revisar el estado de tus actividades académicas.</p>
+    <hr>
+
+    <h2>Tus Tareas Asignadas</h2>
+
+    {% if tareas %}
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Tarea</th>
+                <th>Descripción</th>
+                <th>Fecha de Entrega</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tareas %}
+            <tr>
+                <td><strong>{{ tarea.titulo }}</strong></td>
+                <td>{{ tarea.descripcion }}</td>
+                <td>{{ tarea.fecha_entrega }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>¡Felicidades! No hay tareas asignadas en este momento.</p>
+    {% endif %}
+
+    <hr>
+    <a href="/logout"><button type="button">Cerrar Sesión</button></a>
+</body>
+</html>

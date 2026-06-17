@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mis Tareas</title>
+</head>
+<body>
+    <h1>Panel de Tareas (Profesor)</h1>
+    <a href="/crear-tarea"><button>Nueva Tarea</button></a>
+    <br><br>
+    {% if tareas %}
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Fecha Entrega</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarea in tareas %}
+            <tr>
+                <td>{{ tarea.titulo }}</td>
+                <td>{{ tarea.fecha_entrega }}</td>
+                <td>
+                    <a href="/editar-tarea/{{ tarea.id }}">Editar</a> | 
+                    <a href="/eliminar-tarea/{{ tarea.id }}" onclick="return confirm('¿Seguro que deseas eliminar esta tarea?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No hay tareas creadas aún.</p>
+    {% endif %}
+</body>
+</html>
