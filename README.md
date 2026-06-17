@@ -7,9 +7,9 @@ El portal permite a estudiantes y profesores gestionar información académica, 
 ---
 
 ##  Información de la Estudiante
-* **Nombre:** [Luna Castro]
+* **Nombre:** Luna Castro
 * **Curso/Sección:** Clase 1114
-* **Profesor:** [Henry Ortegon]
+* **Profesor:** Henry Ortegon
 
 ---
 
